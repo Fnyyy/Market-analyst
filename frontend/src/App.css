@@ -1,0 +1,280 @@
+/* Forecasting Page - Sisvest Light Mode */
+
+.forecasting-page {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.forecasting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 9999px;
+    padding: 0.25rem;
+    padding-left: 1rem;
+    width: 400px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar .search-icon {
+    color: #94a3b8;
+    width: 1rem;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+.search-bar button {
+    margin-left: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.5rem 1.5rem;
+}
+
+.forecast-main-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.forecast-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.ticker-badge {
+    background: #1e3a5f;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+}
+
+.company-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: #64748b;
+}
+
+.last-updated {
+    font-size: 0.85rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.refreshing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.price-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+}
+
+.current-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.current-price .currency {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.current-price .amount {
+    font-size: 4rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #0f172a;
+}
+
+.change-pill {
+    padding: 0.4rem 0.8rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+.change-pill.up {
+    background: #DCFCE7;
+    color: #166534;
+}
+
+.change-pill.down {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+.recommendation-badge {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.recommendation-badge .label {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.forecast-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.forecast-value.positive {
+    color: #10b981;
+}
+
+.forecast-value.negative {
+    color: #ef4444;
+}
+
+.expected-price {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+}
+
+.chart-wrapper {
+    height: 400px;
+    margin-bottom: 3.5rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.metric-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f8fafc;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.metric-icon {
+    font-size: 1.5rem;
+}
+
+.metric-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-title {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.metric-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.alert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 12px;
+}
+
+.alert-date {
+    font-size: 0.85rem;
+    color: #991B1B;
+}
+
+.alert-type {
+    font-weight: 600;
+    color: #7F1D1D;
+}
+
+.alert-impact {
+    font-weight: 700;
+    color: #DC2626;
+}
+
+.spinner-icon {
+    animation: spin 1s infinite linear;
+    width: 32px;
+    height: 32px;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
