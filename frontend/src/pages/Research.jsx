@@ -5,13 +5,21 @@ import './Research.css';
 
 function Research() {
     const { researchList } = useStore();
+    const listToRender = researchList && researchList.length > 0 ? researchList : [
+        {
+            id: 1,
+            ticker: "CTRA.JK",
+            title: "Ciputra Group (CTRA) - Strong Pre-sales and Solid Financials",
+            date: "SEP 23, 2025"
+        }
+    ];
 
     return (
         <div className="research-page">
             <div className="container">
                 <h1>Research Reports</h1>
                 <div className="research-grid">
-                    {researchList.map((r, index) => {
+                    {listToRender.map((r, index) => {
                         const styleNum = (index % 3) + 1;
                         return (
                             <div key={r.id} className={`research-card style-${styleNum}`}>
