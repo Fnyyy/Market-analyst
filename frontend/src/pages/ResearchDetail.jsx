@@ -9,7 +9,27 @@ function ResearchDetail() {
     const { id } = useParams();
     const { researchList, notes, fetchNotes, addNote, updateNote, removeNote } = useStore();
     
-    const report = researchList.find(r => r.id === parseInt(id, 10)) || researchList.find(r => r.id === Number(id)) || researchList[0];
+    const listToUse = researchList && researchList.length > 0 ? researchList : [
+        {
+            id: 1,
+            ticker: "CTRA.JK",
+            title: "Ciputra Group (CTRA) - Strong Pre-sales and Solid Financials",
+            date: "SEP 23, 2025",
+            readingTime: "5 min read",
+            analyst: { name: "Budi Santoso", role: "Senior Equity Analyst, Real Estate", avatar: "BS", color: "bg-gradient-to-br from-indigo-500 to-purple-600" },
+            metrics: { rating: "BUY", targetPrice: "Rp 1,500", currentPrice: "Rp 1,250", upside: "+20.0%", riskLevel: "Medium", rawCurrentPrice: 1250, rawTargetPrice: 1500 },
+            tags: ["Real Estate", "Pre-Sales", "Value"],
+            sourceData: [" Laporan Keuangan & Keterbukaan Informasi", " Bank Indonesia: Data Suku Bunga", " Yahoo Finance: Historis Harga"],
+            contentSections: [
+                {
+                    id: "overview", title: "Executive Overview",
+                    body: `<p class="text-lg leading-relaxed text-slate-700 mb-6"><strong>Ciputra Development Tbk (CTRA)</strong> has demonstrated strong financial performance in early 2025, driven by robust pre-sales in key residential projects across major cities.</p>`
+                }
+            ]
+        }
+    ];
+
+    const report = listToUse.find(r => r.id === parseInt(id, 10)) || listToUse.find(r => r.id === Number(id)) || listToUse[0];
     const [noteContent, setNoteContent] = useState("");
     const [editingNoteId, setEditingNoteId] = useState(null);
     const [isFocused, setIsFocused] = useState(false);
